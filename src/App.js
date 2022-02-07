@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import Categories from './Categories'
+import Products from './Products'
+import { useDispatch } from 'react-redux'
+import { filterProducts } from './redux/product-state'
 
-function App() {
+const App = () => {
+  const [filter, setFilter] = useState(false)
+  const [currentCategory, setCurrentCategory] = useState("")
+  const dispatch = useDispatch();
+
+  const categoryChangeHandler = category => {
+    setCurrentCategory(category)
+    if (category === 'All categories') {
+      setFilter(false)
+    } else {
+      dispatch(filterProducts(category))
+      setFilter(true)
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  <div className="container">
+      <div className="row justify-content-center">
+        <div className="title col-md-6">
+      <Products filter={filter} />
+      </div>
+      </div>
+     
+      <div>
+        <Categories
+          currentCategory={currentCategory}
+          categoryChangeHandler={categoryChangeHandler}
+        />
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
