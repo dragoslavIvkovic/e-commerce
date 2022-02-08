@@ -3,14 +3,11 @@
   margin: 0;
   box-sizing: border-box;
 }
-html {
-  font-size: 62.5%;
-  font-family: sans-serif;
-}
-.container {
-  margin-top: 3rem;
-}
-.title {
+ 
+
+
+/* homepage */
+/* .title {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -20,9 +17,13 @@ p {
   color: #0d6efd;
   font-size: 1.2rem;
 }
+ */
 
 
-.category ul li {
+
+/* .category ul li {
   font-size: 1.2rem;
   cursor: pointer;
-}
+} */
+
+ 

@@ -1,0 +1,37 @@
+.container{  justify-content: center;
+  background-color:red;}
+ 
+.product__container {
+  
+  display: grid;
+  place-items: center;
+   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  }
+
+.product__card{ 
+    
+  background-color: green;
+  margin: 0 10px 10px;
+  padding: 5px;
+}
+
+.product__title{
+  font-size:2vh;
+  margin:0;
+
+}
+
+.product__img {
+    height: 20rem;
+  width: 20rem;
+}
+
+/* .product{
+     display: grid;
+  place-items: center;
+  height:30vh;
+  width:15vw;
+  background-color: red;
+} */
