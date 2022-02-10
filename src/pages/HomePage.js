@@ -30,6 +30,7 @@ setSearchQuery(query);
 }
 
 
+
   return (
     <div className='grid-container'>
       <div className='header'>Header</div>

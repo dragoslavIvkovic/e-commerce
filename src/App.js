@@ -1,13 +1,17 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import SingleProduct from './components/SingleProduct'
 
 import { HomePage } from './pages/HomePage'
- 
 
 const App = () => {
-  
-
   return (
-    <div >
-   <HomePage/>
+    <div>
+      <Router>
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+            <Route exact path="/:id" element={<SingleProduct/>} />
+        </Routes>
+      </Router>
     </div>
   )
 }
