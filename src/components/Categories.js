@@ -1,10 +1,10 @@
 import React from 'react'
-import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux'
 
-import "../_styles/Categories.css"
+import '../_styles/Categories.css'
 
 const Categories = ({ currentCategory, categoryChangeHandler }) => {
-  const { products } = useSelector((state) => state.product)
+  const { products } = useSelector(state => state.product)
   const categories = []
   products.map(product => categories.push(product.category))
   const categoriesFinal = ['All categories', ...new Set(categories)]
@@ -27,4 +27,4 @@ const Categories = ({ currentCategory, categoryChangeHandler }) => {
     </ul>
   )
 }
-export default Categories;
+export default Categories

@@ -5,6 +5,7 @@ import Products from '../components/Products'
 import { useDispatch } from 'react-redux'
 import { filterProducts } from '../redux/product-state'
 import SearchBar from '../components/SearchBar'
+import Header from './Header'
 
 export const HomePage = () => {
   const [filter, setFilter] = useState(false)
@@ -33,7 +34,7 @@ setSearchQuery(query);
 
   return (
     <div className='grid-container'>
-      <div className='header'>Header</div>
+      <Header/>
 
       <nav className='filters'>
         <Categories

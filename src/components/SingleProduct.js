@@ -1,30 +1,27 @@
 
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { useSelector } from 'react-redux';
- 
+import { useParams } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
-
-function SingleProduct() {
+function SingleProduct () {
   const { products } = useSelector(state => state.product)
-   const { id } = useParams();
+  const { id } = useParams()
 
-   
-   const thisProduct = products.filter(product => product.id == id)
- 
-console.log(thisProduct)
+  const thisProduct = products.filter(product => product.id == id)
 
-  return <div>{
-   thisProduct.map(product => 
-   <div>
-<p>{product.id}</p>
-<p>{product.title}</p>
-<p>{product.price}</p>
-<img src={product.img} alt={product.title} />
+  console.log(thisProduct)
 
-   </div>
-   
-   ) }</div>;
+  return (
+    <div>
+      {thisProduct.map(product => (
+        <div>
+          <p>{product.id}</p>
+          <p>{product.title}</p>
+          <p>{product.price}</p>
+          <img src={product.img} alt={product.title} />
+        </div>
+      ))}
+    </div>
+  )
 }
 
-export default SingleProduct;
+export default SingleProduct

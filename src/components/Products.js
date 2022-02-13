@@ -1,13 +1,15 @@
-import React,{ useState} from 'react'
-import { useSelector } from 'react-redux'
+
+import { useDispatch, useSelector } from 'react-redux'
 import '../_styles/Products.css'
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
+import { addToCart } from '../redux/cartReducer'
 
 const Products = ({ filter, searchQuery }) => {
   const { products } = useSelector(state => state.product)
-  const { filteredProducts } = useSelector(state => state.product);
-  const [state,setState] = useState();
-  const navigate = useNavigate();
+  const { filteredProducts } = useSelector(state => state.product)
+
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   let searchResult
 
@@ -17,18 +19,15 @@ const Products = ({ filter, searchQuery }) => {
     )
   }
 
-
-
-console.log(state)
-
-
   return (
     <div className='container'>
       {' '}
       <div className='product__container'>
+      
         {!filter &&
           !searchQuery &&
           products.map(product => (
+            
             <div id={product.id} key={product.id} className='product__card'>
               <img
                 src={product.img}
@@ -36,8 +35,11 @@ console.log(state)
                 className='product__img'
               />{' '}
               <p className='product__title'>{product.title}</p>
-                <button onClick={() => navigate(`/${product.id}`)}>
+              <button onClick={() => navigate(`/${product.id}`)}>
                 Product details
+              </button>
+              <button onClick={(e) => dispatch(addToCart(product))}>
+                Add to cart{console.log(product)}
               </button>
             </div>
           ))}

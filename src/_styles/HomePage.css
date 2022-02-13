@@ -1,5 +1,7 @@
 .header {
   grid-area: header;
+  display: inline;
+  background-color:red;
 }
 .filters {
   grid-area: filters;
