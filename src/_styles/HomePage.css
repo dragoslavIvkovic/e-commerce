@@ -3,6 +3,13 @@
   display: inline;
   background-color:red;
 }
+.header li {
+  grid-area: header;
+  display: inline;
+  justify-content:space-evenly;
+  margin-inline: 50px;
+ 
+}
 .filters {
   grid-area: filters;
 }

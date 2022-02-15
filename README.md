@@ -8,3 +8,6 @@ todo
 3. user login
 4. save cart in firebase
 5. ✅ Grid layout
+6. Valid passwords
+7. Alert
+8. Loading
