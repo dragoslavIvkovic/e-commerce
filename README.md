@@ -11,3 +11,5 @@ todo
 6. Valid passwords
 7. Alert
 8. Loading
+9.  redux save to storage
+10. layouts
