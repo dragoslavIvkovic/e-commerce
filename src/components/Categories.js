@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import '../_styles/Categories.css'
 
 const Categories = ({ currentCategory, categoryChangeHandler }) => {
-  const { products } = useSelector(state => state.product)
+  const { products } = useSelector(state => state.sneakers)
   const categories = []
   products.map(product => categories.push(product.category))
   const categoriesFinal = ['All categories', ...new Set(categories)]

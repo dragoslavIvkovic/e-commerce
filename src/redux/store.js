@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import productSliceReducer from "./product-state";
+import sneakersSliceReducer from "./product-state";
 import cartReducer from "./cartReducer"
 import authReducer from "./authSlice";
 import storage from 'redux-persist/lib/storage';
@@ -19,7 +19,7 @@ const persistConfig = {
     key: 'counter',
     storage,
 };
-const reducers = combineReducers({product: productSliceReducer,
+const reducers = combineReducers({sneakers: sneakersSliceReducer,
         cart: cartReducer,
         auth: authReducer, });
 

@@ -370,8 +370,8 @@ const initialState = {
 
 
 
-export const productSlice = createSlice({
-  name: 'product',
+export const sneakersSlice = createSlice({
+  name: 'sneakers',
   initialState,
   reducers: {
    filterProducts(state, action) {
@@ -383,6 +383,6 @@ export const productSlice = createSlice({
  
 })
 
-export const {filterProducts} = productSlice.actions;
+export const {filterProducts} = sneakersSlice.actions;
 
-export default productSlice.reducer;
+export default sneakersSlice.reducer;

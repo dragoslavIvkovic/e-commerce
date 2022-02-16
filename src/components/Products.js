@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom'
 import { addToCart } from '../redux/cartReducer'
 
 const Products = ({ filter, searchQuery }) => {
-  const { products } = useSelector(state => state.product)
-  const { filteredProducts } = useSelector(state => state.product)
+  const { products } = useSelector(state => state.sneakers)
+  const { filteredProducts } = useSelector(state => state.sneakers)
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -35,6 +35,8 @@ const Products = ({ filter, searchQuery }) => {
                 className='product__img'
               />{' '}
               <p className='product__title'>{product.title}</p>
+              <p className='product__price'>{product.price}</p>
+              <p className='product__category'>{product.category}</p>
               <button onClick={() => navigate(`/${product.id}`)}>
                 Product details
               </button>
@@ -44,7 +46,22 @@ const Products = ({ filter, searchQuery }) => {
             </div>
           ))}
 
-        {searchQuery &&
+        
+        {filter && searchQuery &&
+          filteredProducts.map(product => (
+            <div key={product.id} className='product__card'>
+              <img
+                src={product.img}
+                alt={product.title}
+                className='product__img'
+              />{' '}
+             <p className='product__title'>{product.title}</p>
+              <p className='product__price'>{product.price}</p>
+              <p className='product__category'>{product.category}</p>
+            </div>
+          ))}
+
+          {searchQuery &&
           searchResult.map(product => (
             <div id={product.id} key={product.id} className='product__card'>
               <img
@@ -53,20 +70,11 @@ const Products = ({ filter, searchQuery }) => {
                 className='product__img'
               />{' '}
               <p className='product__title'>{product.title}</p>
+              <p className='product__price'>{product.price}</p>
+              <p className='product__category'>{product.category}</p>
             </div>
           ))}
 
-        {filter &&
-          filteredProducts.map(product => (
-            <div key={product.id} className='product__card'>
-              <img
-                src={product.img}
-                alt={product.title}
-                className='product__img'
-              />{' '}
-              <p className='product__title'>{product.title}</p>
-            </div>
-          ))}
       </div>
     </div>
   )

@@ -13,3 +13,5 @@ todo
 8. Loading
 9.  redux save to storage
 10. layouts
+11. add to favorites
+
