@@ -5,16 +5,19 @@ import Login from './Login';
 import Register from './Register';
 import { Link } from 'react-router-dom';
  
-
+import { getAuth } from "firebase/auth";
 
 function SingIn() {
    
-
+const auth = getAuth();
     const user = useSelector((state) => state.auth.value);
+    
+   
+   console.log(auth.currentUser)
 
-    let LogOrSignUp = user !== null ?   <Login/> : <Register/>
+  
   return (
-    <>{!user ? <Login/>  :  <LogOut/>}
+    <>{user ? <LogOut/> : <Login/>}
     
     
     </>
