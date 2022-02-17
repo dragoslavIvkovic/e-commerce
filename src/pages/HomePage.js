@@ -10,7 +10,7 @@ import Header from './Header'
 export const HomePage = () => {
   const [filter, setFilter] = useState(false)
   const [currentCategory, setCurrentCategory] = useState('')
-  const [searchQuery, setSearchQuery] = useState("")
+  const [searchQuery, setSearchQuery] = useState('')
   const dispatch = useDispatch()
 
   const categoryChangeHandler = category => {
@@ -18,23 +18,21 @@ export const HomePage = () => {
     if (category === 'All categories') {
       setFilter(false)
     } else {
-      setSearchQuery(" ")
+      setSearchQuery(' ')
       dispatch(filterProducts(category))
       setFilter(true)
     }
   }
 
-const searchChangeHandler = (query) => {
-setCurrentCategory("");
-setFilter(false);
-setSearchQuery(query);
-}
-
-
+  const searchChangeHandler = query => {
+    setCurrentCategory('')
+    setFilter(false)
+    setSearchQuery(query)
+  }
 
   return (
     <div className='grid-container'>
-      <Header/>
+      <Header />
 
       <nav className='filters'>
         <Categories
@@ -43,8 +41,8 @@ setSearchQuery(query);
         />
       </nav>
       <div className='products__container--grid'>
-        <SearchBar  value={searchQuery} onChange={searchChangeHandler}/>
-        <Products filter={filter} searchQuery={searchQuery}/>
+        <SearchBar value={searchQuery} onChange={searchChangeHandler} />
+        <Products filter={filter} searchQuery={searchQuery} />
       </div>
 
       <div className='footer'></div>

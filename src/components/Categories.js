@@ -11,8 +11,9 @@ const Categories = ({ currentCategory, categoryChangeHandler }) => {
 
   return (
     <ul className='list-group'>
+    <p className="name_category">category</p>
       {categoriesFinal.map(category => (
-        <button
+        <li
           key={category}
           className={
             category === currentCategory
@@ -22,7 +23,7 @@ const Categories = ({ currentCategory, categoryChangeHandler }) => {
           onClick={() => categoryChangeHandler(category)}
         >
           {category}
-        </button>
+        </li>
       ))}
     </ul>
   )

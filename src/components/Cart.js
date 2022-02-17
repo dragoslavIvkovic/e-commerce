@@ -3,7 +3,7 @@ import {
   removeFromCart,
   addItemQuantity,
   subtractItemQuantity
-} from "../redux/cartReducer";
+} from "../redux/cartSlice";
 import StripeCheckout from "react-stripe-checkout";
  import { toast } from "react-toastify";
 import { AiOutlineMinus,AiOutlinePlus} from "react-icons/ai";

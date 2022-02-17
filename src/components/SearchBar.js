@@ -1,16 +1,21 @@
-	import React from "react"
+	import React from "react";
+  import "../_styles/SearchBar.css"
+  import {FaSearch} from "react-icons/fa"
 
 const SearchBar = ({value,onChange}) => {
   return (
-    <div className="col-md-4">
+    <form className="search_container">
       <input
         type="search"
         value={value}
-        className="form-control form-control-lg"
+        className="input__search"
         placeholder="Search..."
         onChange={(e) => onChange(e.target.value)}
+        
       />
-    </div>
+   
+     
+    </form>
   )
 }
 export default SearchBar

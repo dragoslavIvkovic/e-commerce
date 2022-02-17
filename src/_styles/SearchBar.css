@@ -1,0 +1,11 @@
+/* 
+.search_container{
+   display: inline;
+} */
+
+.input__search{
+height:3.5vh;
+width:12vw;
+border:2px solid lightblue;
+border-radius:11px;
+}
