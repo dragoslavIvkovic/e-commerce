@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import '../_styles/Products.css'
 import { useNavigate } from 'react-router-dom'
 import { addToCart } from '../redux/cartSlice'
-
+import "../_styles/cartBtn.css"
 const Products = ({ filter, searchQuery }) => {
   const { products } = useSelector(state => state.sneakers)
   const { filteredProducts } = useSelector(state => state.sneakers)
@@ -41,7 +41,7 @@ const Products = ({ filter, searchQuery }) => {
                   })}
                 </p>
               </div>
-              <button onClick={e => dispatch(addToCart(product))}>
+              <button className="add__toCart--btn" onClick={e => dispatch(addToCart(product))}>
                 Add to cart{console.log(product)}
               </button>
             </div>
@@ -66,7 +66,7 @@ const Products = ({ filter, searchQuery }) => {
                   })}
                 </p>
               </div>
-              <button onClick={e => dispatch(addToCart(product))}>
+              <button  className="add__toCart--btn" onClick={e => dispatch(addToCart(product))}>
                 Add to cart{console.log(product)}
               </button>
             </div>
@@ -90,7 +90,7 @@ const Products = ({ filter, searchQuery }) => {
                   })}
                 </p>
               </div>
-              <button onClick={e => dispatch(addToCart(product))}>
+              <button className="add__toCart--btn" onClick={e => dispatch(addToCart(product))}>
                 Add to cart{console.log(product)}
               </button>
             </div>

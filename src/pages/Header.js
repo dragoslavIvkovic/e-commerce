@@ -8,7 +8,11 @@ import { useSelector, useDispatch } from 'react-redux'
 import { saveUser } from '../redux/authSlice'
 import ProtectedRoute from '../utils/ProtectedRoute'
 import { FaShoppingCart } from 'react-icons/fa'
-import { BsFillPersonCheckFill, BsFillPersonDashFill,BsHeartFill } from 'react-icons/bs'
+import {
+  BsFillPersonCheckFill,
+  BsFillPersonDashFill,
+  BsHeartFill
+} from 'react-icons/bs'
 
 function Header () {
   initializeApp(firebaseConfig)
@@ -16,6 +20,8 @@ function Header () {
   const user = useSelector(state => state.auth.value)
   console.log('user from state', user)
   const dispatch = useDispatch()
+
+  const { quantity } = useSelector(state => state.cart)
 
   useEffect(() => {
     onAuthStateChanged(auth, user => {
@@ -28,24 +34,23 @@ function Header () {
   }, [auth, dispatch])
   return (
     <div className='header'>
-      <ul>
-        <li className='header__links'>
-          <Link to='/'>Home</Link>
-        </li>
+      <ul className="header__container">
+        <Link to='/' className='header__logo'>
+          Home
+        </Link>
+<div className='header__right'>
+        <Link to='/protected' className='header__links'>
+          <BsHeartFill />
+        </Link>
 
-        <li className='header__links'>
-          <Link to='/protected'><BsHeartFill/></Link>
-        </li>
-        <li className='header__links'>
-          <Link to='/signing'>
-            {user ? <BsFillPersonCheckFill /> : <BsFillPersonDashFill />}
-          </Link>
-        </li>
-        <li className='header__links'>
-          <Link to='/cart' className='cart'>
-            <FaShoppingCart />
-          </Link>
-        </li>
+        <Link to='/signing' className='header__links'>
+          {user ? <BsFillPersonCheckFill /> : <BsFillPersonDashFill />}
+        </Link>
+
+        <Link to='/cart' className='header__links'><FaShoppingCart />
+          {quantity}
+          
+        </Link></div>
       </ul>
     </div>
   )

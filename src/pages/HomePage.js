@@ -32,7 +32,7 @@ export const HomePage = () => {
 
   return (
     <div className='grid-container'>
-      <Header />
+     
 
       <nav className='filters'>
         <Categories

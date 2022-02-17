@@ -14,13 +14,17 @@
 .product__card {
   margin: 0 10px 10px;
   padding: 5px;
-  background-color: #f6f6f6;
+  background-color: #f6f6f6;box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .product__img {
   height: 12rem;
   width: 20rem;
   object-fit: cover;
+}
+.product__img:hover {
+ -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 .product__text {

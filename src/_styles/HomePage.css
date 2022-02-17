@@ -1,13 +1,13 @@
 .header {
   grid-area: header;
-  display: inline; align-items: center;
-  text-align: center;
+  display: inline;   
+
 }
 .header li {
   grid-area: header;
   display: inline;
  
-  margin-inline: 50px;
+
 }
 .filters {
   grid-area: filters;

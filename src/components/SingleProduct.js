@@ -4,7 +4,7 @@ import { useDispatch,useSelector } from 'react-redux'
 import Header from '../pages/Header'
 import "../_styles/SingleProduct.css"
 import { addToCart } from '../redux/cartSlice'
-
+import "../_styles/cartBtn.css"
 
 
 function SingleProduct () {
@@ -17,7 +17,7 @@ function SingleProduct () {
 
   return (
    <>
-    <Header/> 
+    
      
     <div className="single__product">
       {thisProduct.map(product => (
@@ -47,12 +47,12 @@ function SingleProduct () {
                   })}
                 </p>
               
-              <button onClick={e => dispatch(addToCart(product))}>
+              <button className="add__toCart--btn" onClick={e => dispatch(addToCart(product))}>
                 Add to cart{console.log(product)}
               </button>
             </div></div>
       ))}
-    </div> </>
+    </div>  </>
   )
 }
 

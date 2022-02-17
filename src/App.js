@@ -7,11 +7,13 @@ import SingleProduct from './components/SingleProduct'
 
 import { HomePage } from './pages/HomePage'
 import SingIn  from './components/auth/SingIn'
+import Header from './pages/Header'
 
 const App = () => {
   return (
     <div>
-      <Router>
+    
+      <Router> <Header/> 
         <Routes>
           <Route path='/' element={<HomePage />} />
             <Route   path="/:id" element={<SingleProduct/>} />
