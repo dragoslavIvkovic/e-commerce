@@ -1,0 +1,25 @@
+.notfound {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+.notfound h1 {
+    font-size: 6rem;
+}
+
+.notfound a {
+    margin-top: 200px;
+    font-size: 2rem;
+    padding: 15px;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}

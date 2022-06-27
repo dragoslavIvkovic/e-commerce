@@ -1,0 +1,60 @@
+.filter-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 7px;
+    margin: 10px 0 30px 0;
+}
+
+input[name="color"] + label,
+input[name="brand"] + label,
+input[name="size"] + label
+{
+    background-color: var(--color-grey-light);
+    padding: 7px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[name="color"]:hover + label,
+input[name="brand"]:hover + label,
+input[name="size"]:hover + label
+{
+    background-color: var(--color-grey);
+}
+
+input[name="color"]:checked + label,
+input[name="brand"]:checked + label,
+input[name="size"]:checked + label
+{
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+.sort select {
+    margin-left: 10px;
+    margin-bottom: 20px;
+    font-size: 1em;
+}
+
+.sort label {
+    font-size: 1.2em;
+}
+
+
+
+/* large viewport */
+@media screen and (min-width: 1120px) {
+    .filter-options {
+        display: flex;
+        justify-content: space-between;
+        gap: 2em;
+    }
+}
+
+/* extra-large viewport */
+@media screen and (min-width: 1440px) {
+    .filter-options {
+        justify-content: flex-start;
+        gap: 3em;
+    }
+}

@@ -1,0 +1,9 @@
+:root {
+    --pad-and-gap: 1em;
+    --min-width: 340px;
+    --max-width: 1480px;
+    --color-black: #000;
+    --color-white: #FFF;
+    --color-grey: #B3B3B3;
+    --color-grey-light: #EBECED;
+}
